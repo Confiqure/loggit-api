@@ -1,0 +1,9 @@
+# See https://help.github.com/ignore-files/ for more about ignoring files.
+
+dist/
+node_modules/
+
+.DS_Store
+.env
+.eslintcache
+.node_repl_history
