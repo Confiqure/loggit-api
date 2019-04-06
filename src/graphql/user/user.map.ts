@@ -1,8 +1,8 @@
 import { resolver } from 'graphql-sequelize';
 import { User } from '../../models';
-import to from 'await-to-js';
 
 export const UserMap = {
-  company: resolver(User.associations.company),
+  role: resolver(User.associations.role),
+  school: resolver(User.associations.school),
   jwt: user => user.getJwt(),
 };

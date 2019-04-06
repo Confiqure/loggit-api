@@ -9,8 +9,7 @@ export class IsAuthUserDirective extends SchemaDirectiveVisitor {
     field.resolve = async function(...args) {
       let authUser, user;
       [user, {}, { authUser }] = args;
-      console.log('run');
-      if ((authUser && authUser.id === user.id) || user.login) {
+      if ((authUser && authUser.username === user.username) || user.login) {
         const result = await resolve.apply(this, args);
         return result;
       } else {
@@ -33,7 +32,9 @@ export class IsAuthDirective extends SchemaDirectiveVisitor {
       }
 
       let err, authUser;
-      [err, authUser] = await to(User.findOne({ where: { id: userInfo.id } }));
+      [err, authUser] = await to(
+        User.findOne({ where: { username: userInfo.username } })
+      );
       if (!authUser) {
         throw new Error(
           'JWT token received, User not found, and not authenticated'

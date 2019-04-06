@@ -1,0 +1,15 @@
+type School {
+  id: Int!
+  name: String!
+  goal: String!
+  users: [User]
+}
+
+input SchoolWhere {
+  id: Int
+  name: String
+}
+
+type Query {
+  getSchool(where: SchoolWhere, limit: Int, offset: Int): School
+}

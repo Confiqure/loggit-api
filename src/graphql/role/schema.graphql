@@ -1,0 +1,14 @@
+type Role {
+  id: Int!
+  name: String!
+  users: [User]
+}
+
+input RoleWhere {
+  id: Int
+  name: String
+}
+
+type Query {
+  getRole(where: RoleWhere, limit: Int, offset: Int): Role
+}
