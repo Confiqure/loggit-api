@@ -1,0 +1,19 @@
+type Certification {
+  id: String!
+  name: String!
+  notes: String!
+  users: [User]
+}
+
+input CertificationWhere {
+  id: String
+  name: String
+}
+
+type Query {
+  getCertification(
+    where: CertificationWhere
+    limit: Int
+    offset: Int
+  ): Certification
+}

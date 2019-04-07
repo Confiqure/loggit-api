@@ -2,15 +2,18 @@ import {
   Table,
   Column,
   Model,
+  ForeignKey,
   HasMany,
   BelongsTo,
-  ForeignKey,
+  BelongsToMany,
   BeforeSave,
   DataType,
   UpdatedAt,
 } from 'sequelize-typescript';
+import { Certification } from './certification.model';
 import { Role } from './role.model';
 import { School } from './school.model';
+import { UserCert } from './usercert.model';
 import * as bcrypt from 'bcrypt';
 import to from 'await-to-js';
 import * as jsonwebtoken from 'jsonwebtoken';
@@ -80,6 +83,9 @@ export class User extends Model<User> {
     defaultValue: 0,
   })
   logins: number;
+
+  @BelongsToMany(() => Certification, () => UserCert)
+  certifications: Certification[];
 
   jwt: string;
   login: boolean;

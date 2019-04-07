@@ -11,7 +11,7 @@ export class School extends Model<School> {
   })
   id: number;
 
-  @Column({ type: DataType.STRING(64), allowNull: false })
+  @Column({ type: DataType.STRING(64), unique: true, allowNull: false })
   name: string;
 
   @Column({ type: DataType.TEXT, allowNull: false })

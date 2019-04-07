@@ -12,6 +12,7 @@ type User {
   active: Int!
   logins: Int!
   lastlogin: String!
+  certifications: [Certification]
   jwt: String @isAuthUser
 }
 
