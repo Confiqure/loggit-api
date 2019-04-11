@@ -13,6 +13,7 @@ type User {
   logins: Int!
   lastlogin: String!
   certifications: [Certification]
+  goals: [Goal]
   jwt: String @isAuthUser
 }
 

@@ -11,6 +11,7 @@ import {
   UpdatedAt,
 } from 'sequelize-typescript';
 import { Certification } from './certification.model';
+import { Goal } from './goal.model';
 import { Role } from './role.model';
 import { School } from './school.model';
 import { UserCert } from './usercert.model';
@@ -86,6 +87,9 @@ export class User extends Model<User> {
 
   @BelongsToMany(() => Certification, () => UserCert)
   certifications: Certification[];
+
+  @HasMany(() => Goal)
+  goals: Goal[];
 
   jwt: string;
   login: boolean;

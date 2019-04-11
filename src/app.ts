@@ -51,6 +51,7 @@ app.listen({ port: ENV.PORT }, async () => {
 
   if (err) {
     console.error('Error: Cannot connect to database');
+    console.error(err);
   } else {
     console.log('Connected to database');
   }

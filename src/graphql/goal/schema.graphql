@@ -1,0 +1,19 @@
+type Goal {
+  id: Int!
+  user: User!
+  name: String!
+  description: String!
+  certification: Certification!
+  state: Int!
+  comments: Int!
+}
+
+input GoalWhere {
+  id: Int
+  username: String
+  state: Int
+}
+
+type Query {
+  getGoal(where: GoalWhere, limit: Int, offset: Int): Goal
+}

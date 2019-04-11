@@ -2,12 +2,3 @@ type UserCert {
   username: String!
   cert_id: String!
 }
-
-input UserCertWhere {
-  username: String
-  cert_id: String
-}
-
-type Query {
-  getUserCert(where: UserCertWhere, limit: Int, offset: Int): UserCert
-}

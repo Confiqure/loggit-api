@@ -19,6 +19,7 @@ export const sequelize = new Sequelize({
   },
 });
 export { Certification } from './certification.model';
+export { Goal } from './goal.model';
 export { Role } from './role.model';
 export { School } from './school.model';
 export { User } from './user.model';
