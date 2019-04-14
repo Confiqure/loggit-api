@@ -1,0 +1,5 @@
+type Credit {
+  activity: Activity
+  goal: Goal
+  amount: Float!
+}

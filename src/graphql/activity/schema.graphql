@@ -1,0 +1,25 @@
+type Activity {
+  id: Int!
+  user: User!
+  year: Int!
+  name: String!
+  type: ActivityType
+  date: String!
+  location: String!
+  text_pre: String!
+  text_final: String!
+  state: Int!
+  comments: String!
+  credits: [Credit]!
+  expenses: [Expense]
+}
+
+input ActivityWhere {
+  id: Int
+  username: String
+  state: Int
+}
+
+type Query {
+  getActivity(where: ActivityWhere, limit: Int, offset: Int): Activity
+}

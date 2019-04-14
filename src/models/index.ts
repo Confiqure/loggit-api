@@ -18,7 +18,11 @@ export const sequelize = new Sequelize({
     );
   },
 });
+export { Activity } from './activity.model';
+export { ActivityType } from './activitytype.model';
 export { Certification } from './certification.model';
+export { Credit } from './credit.model';
+export { Expense } from './expense.model';
 export { Goal } from './goal.model';
 export { Role } from './role.model';
 export { School } from './school.model';

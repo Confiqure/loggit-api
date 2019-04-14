@@ -1,0 +1,7 @@
+type ActivityType {
+  id: Int!
+  name: String!
+  description: String!
+  preapproval_required: Boolean!
+  activities: [Activity]
+}

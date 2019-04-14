@@ -1,0 +1,18 @@
+type Expense {
+  id: Int!
+  activity: Activity!
+  name: String!
+  amount: Int!
+  attachment_name: String!
+  attachment_location: String!
+  state: Int!
+  comments: String!
+}
+
+input ExpenseWhere {
+  id: Int
+}
+
+type Query {
+  getExpense(where: ExpenseWhere, limit: Int, offset: Int): Expense
+}

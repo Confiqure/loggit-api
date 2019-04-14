@@ -10,6 +10,7 @@ import {
   DataType,
   UpdatedAt,
 } from 'sequelize-typescript';
+import { Activity } from './activity.model';
 import { Certification } from './certification.model';
 import { Goal } from './goal.model';
 import { Role } from './role.model';
@@ -84,6 +85,9 @@ export class User extends Model<User> {
     defaultValue: 0,
   })
   logins: number;
+
+  @HasMany(() => Activity)
+  activities: Activity[];
 
   @BelongsToMany(() => Certification, () => UserCert)
   certifications: Certification[];

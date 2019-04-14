@@ -5,7 +5,8 @@ type Goal {
   description: String!
   certification: Certification!
   state: Int!
-  comments: Int!
+  comments: String!
+  credits: [Credit]!
 }
 
 input GoalWhere {

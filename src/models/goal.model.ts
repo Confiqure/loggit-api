@@ -6,8 +6,10 @@ import {
   ForeignKey,
   BelongsTo,
   HasOne,
+  HasMany,
 } from 'sequelize-typescript';
 import { Certification } from './certification.model';
+import { Credit } from './credit.model';
 import { User } from './user.model';
 
 @Table
@@ -45,8 +47,11 @@ export class Goal extends Model<Goal> {
     allowNull: false,
     defaultValue: 1,
   })
-  state: string;
+  state: number;
 
   @Column({ type: DataType.TEXT, allowNull: false })
   comments: string;
+
+  @HasMany(() => Credit)
+  credits: Credit[];
 }
