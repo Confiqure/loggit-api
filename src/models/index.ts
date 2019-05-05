@@ -8,7 +8,6 @@ export const sequelize = new Sequelize({
   dialect: ENV.DB_DIALECT,
   username: ENV.DB_USER,
   password: ENV.DB_PASSWORD,
-  operatorsAliases: false,
   logging: false,
   storage: ':memory:',
   modelPaths: [__dirname + '/*.model.ts'],
