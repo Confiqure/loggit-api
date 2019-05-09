@@ -30,6 +30,13 @@
     "sequelize-typescript": "^0.6.10"
   },
   "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.4",
+    "@babel/plugin-proposal-class-properties": "^7.4.4",
+    "@babel/plugin-proposal-decorators": "^7.4.4",
+    "@babel/plugin-proposal-object-rest-spread": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
+    "@babel/preset-typescript": "^7.3.3",
     "@typescript-eslint/parser": "^1.7.0",
     "eslint": "^5.16.0",
     "eslint-config-prettier": "^4.2.0",
@@ -53,7 +60,9 @@
     ]
   },
   "scripts": {
-    "build": "tsc",
+    "build": "npm run build:types && npm run build:js",
+    "build:js": "babel src --out-dir dist --extensions \".ts,.tsx\"",
+    "build:types": "tsc",
     "check-updates": "node_modules/.bin/ncu",
     "db:migrate": "node_modules/.bin/sequelize db:migrate",
     "start": "ts-node ./src/app.ts",

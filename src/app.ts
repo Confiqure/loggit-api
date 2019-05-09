@@ -1,5 +1,5 @@
-import * as express from 'express';
-import * as jwt from 'express-jwt';
+import express from 'express';
+import jwt from 'express-jwt';
 import { ApolloServer } from 'apollo-server-express';
 import { createContext, EXPECTED_OPTIONS_KEY } from 'dataloader-sequelize';
 import to from 'await-to-js';

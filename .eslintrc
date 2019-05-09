@@ -1,6 +1,6 @@
 {
-  "parser": "@typescript-eslint/parser",
   "extends": ["prettier"],
+  "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaVersion": 6,
     "project": "./tsconfig.json",

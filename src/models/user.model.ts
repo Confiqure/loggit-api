@@ -16,9 +16,9 @@ import { Goal } from './goal.model';
 import { Role } from './role.model';
 import { School } from './school.model';
 import { UserCert } from './usercert.model';
-import * as bcrypt from 'bcrypt';
+import bcrypt from 'bcrypt';
 import to from 'await-to-js';
-import * as jsonwebtoken from 'jsonwebtoken';
+import jsonwebtoken from 'jsonwebtoken';
 import { ENV } from '../config';
 
 @Table
