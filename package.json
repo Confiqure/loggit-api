@@ -9,6 +9,7 @@
   },
   "main": "index.js",
   "dependencies": {
+    "@babel/polyfill": "^7.4.4",
     "@types/bluebird": "^3.5.26",
     "@types/graphql": "^14.2.0",
     "@types/sequelize": "^4.27.49",
