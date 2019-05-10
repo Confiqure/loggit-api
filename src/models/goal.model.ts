@@ -10,6 +10,7 @@ import {
 } from 'sequelize-typescript';
 import { Certification } from './certification.model';
 import { Credit } from './credit.model';
+import { GoalLink } from './goallink.model';
 import { User } from './user.model';
 
 @Table
@@ -54,4 +55,7 @@ export class Goal extends Model<Goal> {
 
   @HasMany(() => Credit)
   credits: Credit[];
+
+  @HasMany(() => GoalLink)
+  links: GoalLink[];
 }

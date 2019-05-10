@@ -18,11 +18,13 @@ export const sequelize = new Sequelize({
   },
 });
 export { Activity } from './activity.model';
+export { ActivityLink } from './activitylink.model';
 export { ActivityType } from './activitytype.model';
 export { Certification } from './certification.model';
 export { Credit } from './credit.model';
 export { Expense } from './expense.model';
 export { Goal } from './goal.model';
+export { GoalLink } from './goallink.model';
 export { Role } from './role.model';
 export { School } from './school.model';
 export { User } from './user.model';

@@ -1,0 +1,20 @@
+type ActivityLink {
+  id: Int!
+  name: String!
+  parent: Activity!
+  location: String!
+}
+
+input ActivityLinkWhere {
+  id: Int
+  parent: Int
+  location: String
+}
+
+type Query {
+  getActivityLink(
+    where: ActivityLinkWhere
+    limit: Int
+    offset: Int
+  ): ActivityLink
+}

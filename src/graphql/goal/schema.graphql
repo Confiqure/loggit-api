@@ -7,6 +7,7 @@ type Goal {
   state: Int!
   comments: String!
   credits: [Credit]!
+  links: [GoalLink]!
 }
 
 input GoalWhere {

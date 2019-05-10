@@ -11,7 +11,8 @@ type Activity {
   state: Int!
   comments: String!
   credits: [Credit]!
-  expenses: [Expense]
+  expenses: [Expense]!
+  links: [ActivityLink]!
 }
 
 input ActivityWhere {

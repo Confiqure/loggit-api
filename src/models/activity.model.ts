@@ -7,6 +7,7 @@ import {
   BelongsTo,
   HasMany,
 } from 'sequelize-typescript';
+import { ActivityLink } from './activitylink.model';
 import { ActivityType } from './activitytype.model';
 import { Credit } from './credit.model';
 import { Expense } from './expense.model';
@@ -69,4 +70,7 @@ export class Activity extends Model<Activity> {
 
   @HasMany(() => Expense)
   expenses: Expense[];
+
+  @HasMany(() => ActivityLink)
+  links: ActivityLink[];
 }

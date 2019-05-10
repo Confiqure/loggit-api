@@ -1,0 +1,20 @@
+type GoalLink {
+  id: Int!
+  name: String!
+  parent: Goal!
+  location: String!
+}
+
+input GoalLinkWhere {
+  id: Int
+  parent: Int
+  location: String
+}
+
+type Query {
+  getGoalLink(
+    where: GoalLinkWhere
+    limit: Int
+    offset: Int
+  ): GoalLink
+}
