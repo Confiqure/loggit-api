@@ -7,5 +7,5 @@ export const UserMap = {
   goals: resolver(User.associations!.goals),
   role: resolver(User.associations!.role),
   school: resolver(User.associations!.school),
-  jwt: user => user.getJwt(),
+  jwt: (user: User) => user.getJwt(),
 };

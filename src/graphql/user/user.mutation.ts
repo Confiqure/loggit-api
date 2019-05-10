@@ -4,8 +4,8 @@ import to from 'await-to-js';
 
 export const Mutation = {
   createUser: resolver(User, {
-    before: async (findOptions, { data }) => {
-      let err, user;
+    before: async (findOptions: any, { data }: { data: any }) => {
+      let err: User | null, user: any;
       [err, user] = await to(Promise.resolve(User.create(data)));
       if (err) {
         throw err;
@@ -13,7 +13,7 @@ export const Mutation = {
       findOptions.where = { username: user.username };
       return findOptions;
     },
-    after: user => {
+    after: (user: User) => {
       user.login = true;
       return user;
     },

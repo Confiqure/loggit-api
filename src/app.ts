@@ -15,7 +15,7 @@ const authMiddleware = jwt({
 });
 app.use(authMiddleware);
 
-app.use(function(err, req, res, next) {
+app.use(function(err: any, _req: any, res: any, _next: any) {
   const errorObject = { error: true, message: `${err.name}: ${err.message}` };
   if (err.name === 'UnauthorizedError') {
     return res.status(401).json(errorObject);
@@ -29,7 +29,7 @@ const server = new ApolloServer({
   resolvers,
   schemaDirectives,
   playground: true,
-  context: ({ req }) => {
+  context: ({ req }: { req: any }) => {
     return {
       [EXPECTED_OPTIONS_KEY]: createContext(sequelize),
       user: req.user,
@@ -42,14 +42,8 @@ app.listen({ port: ENV.PORT }, async () => {
   console.log(
     `🚀 Server ready at http://localhost:${ENV.PORT}${server.graphqlPath}`
   );
-  let err;
-  [err] = await to(
-    Promise.resolve(
-      sequelize.sync({
-        // force: true
-      })
-    )
-  );
+  let err: any;
+  [err] = await to(Promise.resolve(sequelize.sync()));
 
   if (err) {
     console.error('Error: Cannot connect to database');

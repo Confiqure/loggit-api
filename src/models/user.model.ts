@@ -8,7 +8,6 @@ import {
   BelongsToMany,
   BeforeSave,
   DataType,
-  UpdatedAt,
 } from 'sequelize-typescript';
 import { Activity } from './activity.model';
 import { Certification } from './certification.model';
@@ -100,9 +99,9 @@ export class User extends Model<User> {
 
   @BeforeSave
   static async hashPassword(user: User) {
-    let err;
+    let err: string | null;
     if (user.changed('password')) {
-      let salt, hash;
+      let salt: any, hash: any;
       [err, salt] = await to(bcrypt.genSalt(10));
       if (err) {
         throw err;
@@ -116,8 +115,8 @@ export class User extends Model<User> {
     }
   }
 
-  async comparePassword(pw) {
-    let err, pass;
+  async comparePassword(pw: string) {
+    let err: string | null, pass: boolean | undefined;
     if (!this.password) {
       throw new Error('Does not have password');
     }

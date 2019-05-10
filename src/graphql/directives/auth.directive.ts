@@ -4,10 +4,10 @@ import { User } from '../../models';
 import to from 'await-to-js';
 
 export class IsAuthUserDirective extends SchemaDirectiveVisitor {
-  visitFieldDefinition(field) {
+  visitFieldDefinition(field: any) {
     const { resolve = defaultFieldResolver } = field; //This is confusing javascript syntax here is a link that describes what is going on: https://javascript.info/destructuring-assignment
-    field.resolve = async function(...args) {
-      let authUser, user;
+    field.resolve = async function(...args: any[]) {
+      let authUser: User, user: User;
       [user, {}, { authUser }] = args;
       if ((authUser && authUser.username === user.username) || user.login) {
         const result = await resolve.apply(this, args);
@@ -22,16 +22,16 @@ export class IsAuthUserDirective extends SchemaDirectiveVisitor {
 }
 
 export class IsAuthDirective extends SchemaDirectiveVisitor {
-  public visitFieldDefinition(field) {
+  public visitFieldDefinition(field: any) {
     const { resolve = defaultFieldResolver } = field;
-    field.resolve = async function(...args) {
-      let userInfo;
+    field.resolve = async function(...args: any) {
+      let userInfo: User;
       [, {}, { user: userInfo }] = args;
       if (!userInfo) {
         throw new Error('User not authenticated');
       }
 
-      let err, authUser;
+      let err: string | null, authUser: User | null | undefined;
       [err, authUser] = await to(
         Promise.resolve(
           User.findOne({ where: { username: userInfo.username } })

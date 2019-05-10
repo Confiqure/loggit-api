@@ -4,21 +4,19 @@ import to from 'await-to-js';
 
 export const Query = {
   getUser: resolver(User, {
-    before: async (findOptions, {}, { user }) => {
+    before: async (findOptions: any, {}, { user }: { user: User }) => {
       findOptions.where = { username: user.username };
       return findOptions;
     },
-    after: user => {
-      return user;
-    },
+    after: (user: User) => user,
   }),
   loginUser: resolver(User, {
-    before: async (findOptions, { username }) => {
+    before: async (findOptions: any, { username }: { username: string }) => {
       findOptions.where = { username };
       return findOptions;
     },
-    after: async (user, { password }) => {
-      let err;
+    after: async (user: any, { password }: { password: string }) => {
+      let err: any;
       [err, user] = await to(user.comparePassword(password));
       if (err) {
         throw new Error(err);
