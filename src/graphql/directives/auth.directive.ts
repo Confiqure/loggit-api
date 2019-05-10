@@ -33,7 +33,9 @@ export class IsAuthDirective extends SchemaDirectiveVisitor {
 
       let err, authUser;
       [err, authUser] = await to(
-        User.findOne({ where: { username: userInfo.username } })
+        Promise.resolve(
+          User.findOne({ where: { username: userInfo.username } })
+        )
       );
       if (!authUser) {
         throw new Error(

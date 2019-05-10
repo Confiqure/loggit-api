@@ -7,7 +7,9 @@
     "module": "commonjs",
     "moduleResolution": "node",
     "noEmit": true,
-    //"strict": true,
+    "noImplicitAny": false,
+    "strict": true,
+    "strictPropertyInitialization": false,
     "target": "esnext"
   },
   "include": ["src"]

@@ -44,9 +44,11 @@ app.listen({ port: ENV.PORT }, async () => {
   );
   let err;
   [err] = await to(
-    sequelize.sync({
-      // force: true
-    })
+    Promise.resolve(
+      sequelize.sync({
+        // force: true
+      })
+    )
   );
 
   if (err) {

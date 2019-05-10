@@ -6,7 +6,7 @@ export const Mutation = {
   createUser: resolver(User, {
     before: async (findOptions, { data }) => {
       let err, user;
-      [err, user] = await to(User.create(data));
+      [err, user] = await to(Promise.resolve(User.create(data)));
       if (err) {
         throw err;
       }
