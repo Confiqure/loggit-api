@@ -1,7 +1,7 @@
 type Role {
   id: Int!
   name: String!
-  users: [User]
+  users: [User]!
 }
 
 input RoleWhere {

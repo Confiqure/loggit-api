@@ -2,7 +2,7 @@ type School {
   id: Int!
   name: String!
   goal: String!
-  users: [User]
+  users: [User]!
 }
 
 input SchoolWhere {
