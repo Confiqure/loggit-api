@@ -26,6 +26,8 @@ export { Expense } from './expense.model';
 export { Goal } from './goal.model';
 export { GoalLink } from './goallink.model';
 export { Role } from './role.model';
+export { Sau } from './sau.model';
+export { SauRole } from './saurole.model';
 export { School } from './school.model';
 export { User } from './user.model';
 export { UserCert } from './usercert.model';

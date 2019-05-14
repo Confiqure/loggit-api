@@ -24,8 +24,8 @@ export class Activity extends Model<Activity> {
   id: number;
 
   @ForeignKey(() => User)
-  @Column({ type: DataType.STRING(16), allowNull: false })
-  username: string;
+  @Column({ type: DataType.INTEGER(11).UNSIGNED, allowNull: false })
+  user_id: number;
 
   @BelongsTo(() => User)
   user: User;

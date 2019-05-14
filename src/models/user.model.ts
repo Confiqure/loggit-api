@@ -13,6 +13,7 @@ import { Activity } from './activity.model';
 import { Certification } from './certification.model';
 import { Goal } from './goal.model';
 import { Role } from './role.model';
+import { Sau } from './sau.model';
 import { School } from './school.model';
 import { UserCert } from './usercert.model';
 import bcrypt from 'bcrypt';
@@ -22,14 +23,28 @@ import { ENV } from '../config';
 
 @Table
 export class User extends Model<User> {
-  @Column({ type: DataType.STRING(16), primaryKey: true, allowNull: false })
+  @Column({
+    type: DataType.INTEGER(11).UNSIGNED,
+    primaryKey: true,
+    allowNull: false,
+  })
+  id: number;
+
+  @Column({ type: DataType.STRING(16), unique: true, allowNull: false })
   username: string;
 
   @Column({ type: DataType.STRING(60), allowNull: false })
   password: string;
 
+  @ForeignKey(() => Sau)
+  @Column({ type: DataType.SMALLINT(3).UNSIGNED, allowNull: false })
+  sau_id: number;
+
+  @BelongsTo(() => Sau)
+  sau: Sau;
+
   @Column({ type: DataType.TEXT, allowNull: false })
-  id: string;
+  staff_id: string;
 
   @Column({ type: DataType.STRING(128), unique: true, allowNull: false })
   email: string;
@@ -42,7 +57,7 @@ export class User extends Model<User> {
 
   @ForeignKey(() => School)
   @Column({
-    type: DataType.INTEGER(10).UNSIGNED,
+    type: DataType.INTEGER(11).UNSIGNED,
     allowNull: false,
     defaultValue: 1,
   })
@@ -53,7 +68,7 @@ export class User extends Model<User> {
 
   @ForeignKey(() => Role)
   @Column({
-    type: DataType.INTEGER(10).UNSIGNED,
+    type: DataType.INTEGER(11).UNSIGNED,
     allowNull: false,
     defaultValue: 2,
   })

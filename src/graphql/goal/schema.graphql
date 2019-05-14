@@ -12,7 +12,7 @@ type Goal {
 
 input GoalWhere {
   id: Int
-  username: String
+  user_id: Int
   state: Int
 }
 

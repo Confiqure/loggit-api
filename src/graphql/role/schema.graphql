@@ -1,6 +1,7 @@
 type Role {
   id: Int!
   name: String!
+  saus: [Sau]!
   users: [User]!
 }
 

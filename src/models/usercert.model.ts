@@ -11,8 +11,12 @@ import { User } from './user.model';
 @Table
 export class UserCert extends Model<UserCert> {
   @ForeignKey(() => User)
-  @Column({ type: DataType.STRING(16), primaryKey: true, allowNull: false })
-  username: string;
+  @Column({
+    type: DataType.INTEGER(11).UNSIGNED,
+    primaryKey: true,
+    allowNull: false,
+  })
+  user_id: number;
 
   @ForeignKey(() => Certification)
   @Column({

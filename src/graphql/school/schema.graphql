@@ -1,5 +1,6 @@
 type School {
   id: Int!
+  sau: Sau!
   name: String!
   goal: String!
   users: [User]!

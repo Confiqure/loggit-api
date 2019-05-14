@@ -1,6 +1,8 @@
 type User {
+  id: Int!
   username: String!
-  id: String!
+  sau: Sau!
+  staff_id: String!
   email: String!
   firstname: String!
   lastname: String!
@@ -21,6 +23,7 @@ type User {
 input UserInput {
   username: String
   password: String
+  sau_id: Int
   email: String
   firstname: String
   lastname: String

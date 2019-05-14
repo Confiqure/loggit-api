@@ -1,4 +1,4 @@
 type UserCert {
-  username: String!
+  user_id: Int!
   cert_id: String!
 }

@@ -1,0 +1,4 @@
+type SauRole {
+  sau_id: Int!
+  role_id: Int!
+}

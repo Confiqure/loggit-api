@@ -6,6 +6,7 @@ export const UserMap = {
   certifications: resolver(User.associations!.certifications),
   goals: resolver(User.associations!.goals),
   role: resolver(User.associations!.role),
+  sau: resolver(User.associations!.sau),
   school: resolver(User.associations!.school),
   jwt: (user: User) => user.getJwt(),
 };

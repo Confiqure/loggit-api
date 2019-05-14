@@ -1,0 +1,27 @@
+type Sau {
+  id: Int!
+  activity_types_enabled: Boolean!
+  credit_label: String!
+  expenses_enabled: Boolean!
+  goal_enabled: Boolean!
+  resources: String!
+  seat_limit: Int!
+  text_final: String!
+  text_final_instructions: String!
+  text_pre: String!
+  text_pre_instructions: String!
+  text_required: Boolean!
+  two_step_final_approval: Boolean!
+  whitelist_emails: String!
+  roles: [Role]!
+  schools: [School]!
+  users: [User]!
+}
+
+input SauWhere {
+  id: Int
+}
+
+type Query {
+  getSau(where: SauWhere, limit: Int, offset: Int): Sau
+}
