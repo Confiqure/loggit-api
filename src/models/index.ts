@@ -12,9 +12,7 @@ export const sequelize = new Sequelize({
   storage: ':memory:',
   modelPaths: [__dirname + '/*.model.ts'],
   modelMatch: (filename, member) => {
-    return (
-      filename.substring(0, filename.indexOf('.model')) === member.toLowerCase()
-    );
+    return filename.substring(0, filename.indexOf('.model')) === member.toLowerCase();
   },
 });
 export { Activity } from './activity.model';

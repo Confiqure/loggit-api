@@ -10,9 +10,9 @@ type Activity {
   text_final: String!
   state: Int!
   comments: String!
-  credits: [Credit]!
-  expenses: [Expense]!
-  links: [ActivityLink]!
+  credits: [Credit!]!
+  expenses: [Expense!]!
+  links: [ActivityLink!]!
 }
 
 input ActivityWhere {

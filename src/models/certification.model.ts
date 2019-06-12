@@ -1,10 +1,4 @@
-import {
-  Table,
-  Column,
-  Model,
-  DataType,
-  BelongsToMany,
-} from 'sequelize-typescript';
+import { Table, Column, Model, DataType, BelongsToMany } from 'sequelize-typescript';
 import { User } from './user.model';
 import { UserCert } from './usercert.model';
 

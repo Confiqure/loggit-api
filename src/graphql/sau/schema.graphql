@@ -13,9 +13,9 @@ type Sau {
   text_required: Boolean!
   two_step_final_approval: Boolean!
   whitelist_emails: String!
-  roles: [Role]!
-  schools: [School]!
-  users: [User]!
+  roles: [Role!]!
+  schools: [School!]!
+  users: [User!]!
 }
 
 input SauWhere {

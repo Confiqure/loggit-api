@@ -6,8 +6,8 @@ type Goal {
   certification: Certification!
   state: Int!
   comments: String!
-  credits: [Credit]!
-  links: [GoalLink]!
+  credits: [Credit!]!
+  links: [GoalLink!]!
 }
 
 input GoalWhere {

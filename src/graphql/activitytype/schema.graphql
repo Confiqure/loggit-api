@@ -3,5 +3,5 @@ type ActivityType {
   name: String!
   description: String!
   preapproval_required: Boolean!
-  activities: [Activity]!
+  activities: [Activity!]!
 }

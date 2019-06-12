@@ -1,10 +1,4 @@
-import {
-  Table,
-  Column,
-  Model,
-  DataType,
-  ForeignKey,
-} from 'sequelize-typescript';
+import { Table, Column, Model, DataType, ForeignKey } from 'sequelize-typescript';
 import { Role } from './role.model';
 import { Sau } from './sau.model';
 

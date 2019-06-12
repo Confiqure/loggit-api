@@ -1,11 +1,4 @@
-import {
-  Table,
-  Column,
-  Model,
-  DataType,
-  HasMany,
-  BelongsToMany,
-} from 'sequelize-typescript';
+import { Table, Column, Model, DataType, HasMany, BelongsToMany } from 'sequelize-typescript';
 import { Sau } from './sau.model';
 import { SauRole } from './saurole.model';
 import { User } from './user.model';

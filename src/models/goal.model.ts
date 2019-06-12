@@ -1,13 +1,4 @@
-import {
-  Table,
-  Column,
-  Model,
-  DataType,
-  ForeignKey,
-  BelongsTo,
-  HasOne,
-  HasMany,
-} from 'sequelize-typescript';
+import { Table, Column, Model, DataType, ForeignKey, BelongsTo, HasOne, HasMany } from 'sequelize-typescript';
 import { Certification } from './certification.model';
 import { Credit } from './credit.model';
 import { GoalLink } from './goallink.model';

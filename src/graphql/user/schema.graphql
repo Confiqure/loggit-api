@@ -14,9 +14,9 @@ type User {
   active: Int!
   logins: Int!
   lastlogin: String!
-  activities: [Activity]!
-  certifications: [Certification]!
-  goals: [Goal]!
+  activities: [Activity!]!
+  certifications: [Certification!]!
+  goals: [Goal!]!
   jwt: String @isAuthUser
 }
 
