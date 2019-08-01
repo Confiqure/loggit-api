@@ -34,9 +34,9 @@ input UserInput {
 
 type Query {
   getUser: User @isAuth
-  loginUser(username: String!, password: String!): User
 }
 
 type Mutation {
   createUser(data: UserInput): User
+  loginUser(email: String!, password: String!): User
 }

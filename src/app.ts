@@ -36,12 +36,16 @@ const server = new ApolloServer({
     };
   },
 });
-server.applyMiddleware({ app });
+server.applyMiddleware({
+  app,
+  cors: {
+    origin: '*',
+    credentials: true,
+  },
+});
 
 app.listen({ port: ENV.PORT }, async () => {
-  console.log(
-    `🚀 Server ready at http://localhost:${ENV.PORT}${server.graphqlPath}`
-  );
+  console.log(`🚀 Server ready at http://localhost:${ENV.PORT}${server.graphqlPath}`);
   let err: any;
   [err] = await to(Promise.resolve(sequelize.sync()));
 
